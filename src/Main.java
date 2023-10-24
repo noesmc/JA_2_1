@@ -2,16 +2,14 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        String str;
+        String str = "";
         Scanner scanner = new Scanner(System.in);
 
-        while (true) {
+        while (!str.equalsIgnoreCase("Exit")) {
             System.out.print("Please enter something: ");
             str = scanner.nextLine();
-            if (str.equalsIgnoreCase("Exit")) {
-                System.out.print("You finally wrote \"Exit\"");
-                break;
-            }
+            System.out.printf(str.equalsIgnoreCase("Exit") ?
+                    "You finally wrote \"%s\"" : "You wrote \"%s\"\n", str);
         }
     }
 }
